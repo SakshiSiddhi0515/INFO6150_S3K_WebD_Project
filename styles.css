@@ -5,3 +5,7 @@
 audio {
     display: none;
 }
+
+.btn-primary{
+    background-color: #24476c !important;
+}
