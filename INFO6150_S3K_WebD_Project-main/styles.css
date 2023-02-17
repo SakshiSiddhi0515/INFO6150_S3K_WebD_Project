@@ -1,0 +1,11 @@
+.footer-margin {
+    margin-top: 10rem;
+}
+
+audio {
+    display: none;
+}
+
+.btn-primary{
+    background-color: #24476c !important;
+}
