@@ -5,7 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MyMusic - Your Ultimate Music Destination</title>
+  <script src="https://kit.fontawesome.com/bf755f76ec.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
   <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Custom CSS -->
@@ -26,19 +41,54 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Features
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Listen to Audio</a>
+            <a class="dropdown-item" href="#">Watch Videos</a>
+            <a class="dropdown-item" href="#">Listen to Podcasts</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Subscription
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Annual</a>
+            <a class="dropdown-item" href="#">Quaterly</a>
+            <a class="dropdown-item" href="#">Monthly</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mood & Genres
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">New Releases</a>
+            <a class="dropdown-item" href="#">90s Indie and Rock</a>
+            <a class="dropdown-item" href="#">EDM</a>
+            <a class="dropdown-item" href="#">Bollywood</a>
+            <a class="dropdown-item" href="#">Country</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
+
+      <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+
     </div>
   </nav>
 
@@ -48,11 +98,27 @@
       <div class="col-md-6">
         <h1 class="display-4 mb-4">Discover the world of music with MyMusic</h1>
         <p class="lead">Listen to millions of songs and podcasts anytime, anywhere. Create your own playlists, explore new music, and connect with other music lovers.</p>
-        <a href="#" class="btn btn-primary btn-lg mt-4">Get Started</a>
+        <button href="#" class="btn btn-primary btn-lg mt-4" onclick="goToMusicGallery()">Get Started</button>
       </div>
       <div class="col-md-6">
         <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="music" class="img-fluid">
       </div>
+    </div>
+  </div>
+
+  <div id="video-section"></div>
+  <div id="video-section">
+    <div class="embed-responsive embed-responsive-16by9">
+      
+      <video class="embed-responsive-item" autoplay muted>
+        <source src="bokeh-55859.mp4" type="video/mp4">
+        </video>
+
+        <div class="text-overlay">
+          <h1>Play over 100 million songs and 200 million playlists ad-free</h1>
+          
+        </div>
+
     </div>
   </div>
 
@@ -63,52 +129,141 @@
 
   <!-- Footer -->
 
-  <footer class="bg-dark text-white py-3 footer-margin">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h5>Company</h5>
-        <ul class="list-unstyled">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5>Resources</h5>
-        <ul class="list-unstyled">
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5>Connect with us</h5>
-        <ul class="list-unstyled">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Snapchat</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <hr class="my-4 bg-white">
-        <p class="text-center">&copy; MyMusic 2023. All Rights Reserved.</p>
-      </div>
-    </div>
+  <footer
+  class="text-align text-lg-start text-white footer-margin"
+  style="background-color: #343e4e"
+  >
+<!-- Section: Social media -->
+<section
+     class="d-flex justify-content-between p-4"
+     style="background-color: #2a2835"
+     >
+<!-- Left -->
+<div class="me-5">
+<span>Get connected with us on social networks:</span>
+</div>
+<!-- Left -->
+
+<!-- Right -->
+<div>
+<a href="" class="text-white me-4">
+  <i class="fab fa-facebook-f"></i>
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-twitter"></i>
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-google"></i>
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-instagram"></i>
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-linkedin"></i>
+</a>
+<a href="" class="text-white me-4">
+  <i class="fab fa-github"></i>
+</a>
+</div>
+<!-- Right -->
+</section>
+<!-- Section: Social media -->
+
+<!-- Section: Links  -->
+<section class="">
+<div class="container text-align text-md-start mt-5">
+<!-- Grid row -->
+<div class="row mt-3">
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    <!-- Content -->
+    <h6 class="text-uppercase fw-bold">MyMusic</h6>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #2a2835; height: 2px"
+        />
+    <p>
+      New subscribers only. $10.99/month after free trial. Plan automatically renews until cancelled. Terms apply*
+    </p>
   </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    <!-- Links -->
+    <h6 class="text-uppercase fw-bold">Company</h6>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #2a2835; height: 2px"
+        />
+    <p>
+      <a href="#!" class="text-white">AboutUs</a>
+    </p>
+    <p>
+      <a href="#!" class="text-white">Contact us</a>
+    </p>
+    <p>
+      <a href="#!" class="text-white">Careers</a>
+    </p>
+    
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    <!-- Links -->
+    <h6 class="text-uppercase fw-bold">resources</h6>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #2a2835; height: 2px"
+        />
+    <p>
+      <a href="#!" class="text-white">Help Center</a>
+    </p>
+    <p>
+      <a href="#!" class="text-white">FAQs</a>
+    </p>
+    <p>
+      <a href="#!" class="text-white">Blog</a>
+    </p>
+    
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    <!-- Links -->
+    <h6 class="text-uppercase fw-bold">Contact</h6>
+    <hr
+        class="mb-4 mt-0 d-inline-block mx-auto"
+        style="width: 60px; background-color: #2a2835 ; height: 2px"
+        />
+    <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+    <p><i class="fas fa-envelope mr-3"></i> info@mymusic.com</p>
+    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+  </div>
+  <!-- Grid column -->
+</div>
+<!-- Grid row -->
+</div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div
+ class="text-center p-3"
+ style="background-color: rgba(0, 0, 0, 0.2)"
+ >
+© MyMusic 2023 All Rights Reserved:
+<a class="text-white" href="https://mdbootstrap.com/"
+ >MyMusic.com</a
+>
+</div>
+<!-- Copyright -->
 </footer>
 
-  <!-- <footer class="mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>&copy; MyMusic 2023. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer> -->
+<script src="script.js"></script>
 
 </body>
 </html>
