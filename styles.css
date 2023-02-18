@@ -17,8 +17,7 @@ li a:hover,.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-
-.value-props-video {
+/* .value-props-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,8 +41,6 @@ video {
   background: linear-gradient(#ffff,#c0c1c1) !important;
 }
 
-
-
 #video-section {
   background-color: #ffffff;
   padding: 50px;
@@ -53,17 +50,40 @@ video {
   
 }
 
-
 .text-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* text-align: center; */
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-.text-overlay h1 {
+} */
+
+/* .text-overlay h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
-}
+} */
+
+.embed-responsive {
+    border-radius: 2rem;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+  }
+  
+  .text-overlay h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .container-fluid {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+    margin-top: 5rem;
+  }
