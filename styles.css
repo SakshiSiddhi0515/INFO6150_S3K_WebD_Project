@@ -9,3 +9,11 @@ audio {
 .btn-primary{
     background-color: #24476c !important;
 }
+
+.dropdown-menu a:hover {
+background-color: #fefdff}
+
+li a:hover,.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
