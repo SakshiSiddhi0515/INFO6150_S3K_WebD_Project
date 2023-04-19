@@ -1,0 +1,45 @@
+<app-messages></app-messages>
+<div class="component" [@fadeIn]>
+    <div class="page-header">
+        <h1>{{ title }}</h1>
+    </div>
+    <form #createArtist="ngForm" (ngSubmit)="onSubmit()" *ngIf="artist">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-8">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" #name="ngModel" [(ngModel)]="artist.name" name="name" class="form-control" required/>
+                    <div *ngIf="!name.valid && name.touched" class="alert alert-danger">Name is required </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" #description="ngModel" [(ngModel)]="artist.description" name="description" class="form-control" required />
+                    <div *ngIf="!description.valid && description.touched" class="alert alert-danger">Description is required </div>
+                </div>
+                
+                <p class="hidden">
+                    <input type="file" id="inputImage" (change)="fileChangeEvent($event)" />
+                </p>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4">
+                <label>Profile picture</label>
+                <div class="thumbnail-profile">
+                    <img class="picture-profile" [src]="artistImg" alt="...">
+                    <button type="button" class="btn btn-default btn-xs pull-right" (click)="selectImage()">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <input [disabled]="!createArtist.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right" value="{{ title }}">
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <a class="btn btn-lg btn-block btn-warning" [routerLink]="['/dashboard/artists']">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+        

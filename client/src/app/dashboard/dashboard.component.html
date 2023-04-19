@@ -1,0 +1,112 @@
+<div class="wrapper">
+	<div class="col-6 col-md-4 col-lg-2 nav-content" ngClass="{'hidden' : !fullSideBar}">
+		<ul class="nav sidebar flex-column" > 
+			<li class="nav-header">
+				<a routerLink="['dashboard/home']" class="project-logo-link">
+					<div class="icon-logo">
+						<i class="fa fa-music fa-3x fa-icon-logo"></i>
+					</div>
+					<span class="project-title">Music</span>
+				</a>
+			</li>
+			<li class="nav-item menu-caption">
+				<label>Navigation</label>
+			</li>
+			<li class="nav-item item-menu">
+				<a [routerLink]="['/dashboard/home']" [routerLinkActive]="['active']" class="nav-link">
+					<i class="fa fa-home"></i>
+					<span class="nav-item-text">Home</span>
+				</a>
+			</li>
+			<li class="nav-item item-menu">
+				<a [routerLink]="['/dashboard/explore']" [routerLinkActive]="['active']" class="nav-link">
+					<i class="fa fa-search"></i>
+					<span class="nav-item-text">Explore</span>
+				</a>
+			</li>
+
+			<li class="nav-item item-menu">
+				<a [routerLink]="['/dashboard/liveData']" [routerLinkActive]="['active']" class="nav-link">
+					<i class="fa fa-search"></i>
+					<span class="nav-item-text">Live Music</span>
+				</a>
+			</li>
+
+			<li class="nav-item menu-caption" *ngIf="userLogged && userLogged.role == 'ROLE_ADMIN'">
+				<label>Admin Panel</label>
+			</li>
+			<li class="nav-item item-menu" *ngIf="userLogged && userLogged.role == 'ROLE_ADMIN'">
+				<a class="nav-link" [routerLink]="['/dashboard/user-list']" [routerLinkActive]="['active']">
+					<i class="fa fa-users"></i>
+					<span class="nav-item-text">Users</span>
+				</a>
+				<a class="nav-link" [routerLink]="['/dashboard/artists']" [routerLinkActive]="['active']">
+					<i class="fa fa-headphones"></i>
+					<span class="nav-item-text">Artist</span>
+				</a>
+			</li>
+			<li>
+				<div class="col-4 col-lg-12 player-wrapper">
+					<div class="album-image">
+						<span *ngIf="song.album" >
+							<img id="play-image-album" src="../../assets/images/music-default.png" />
+						</span>
+						<span *ngIf="!song.album">
+							<img id="play-image-album" src="../../assets/images/music-default.png" />
+						</span>
+					</div>
+					<p class="song-description">
+						<span id="play-song-artist" *ngIf="song.album.artist">
+							{{ song.album.artist.name }}
+						</span>
+						<span id="play-song-title" *ngIf="song">
+							{{ song.name }}
+						</span>
+					</p>
+					<audio  (ended)="songFinished()" id="player">
+						<source id="mp3-source" src="" type="audio/mpeg">
+						Tu navegador no es compatible
+					</audio>
+					<button type="button" class="btn btn-lg btn-block btn-play" (click)="playSong()" *ngIf="!playing">
+						<i class="fa fa-play"></i>
+					</button>
+					<button type="button" class="btn btn-lg btn-block btn-pause" (click)="stopSong()" *ngIf="playing">
+						<i class="fa fa-pause"></i>
+					</button>
+				</div>
+			</li>
+		</ul>	                        `	
+	</div>
+	<div class="col-12 col-md-8 col-lg-10 container-wrapper">
+		<div class="container" *ngIf="userLogged">
+			<ul class="nav">
+				<li class="nav-item show-menu-item">
+					<a class="nav-link" (click)="showMenu()"><i class="fa fa-align-justify"></i></a>
+				</li>
+				<li class="ml-auto">
+					<div dropdown class="dropdown">
+						<a href id="basic-link" class="dropdown-toggle" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">
+							<img src="{{ profileImage }}" class="img-radius" alt="User-Profile-Image">
+							<span>{{ userLogged.name +' '+userLogged.lastname }}</span>
+							<i class="fa fa-cog"></i>
+						</a>
+		
+						<div *dropdownMenu class="dropdown-menu dropdown-menu-right profile-notification show" role="menu" aria-labelledby="basic-link">
+							<ul class="pro-body">
+								<li><a [routerLink]="['/dashboard/profile']" class="dropdown-item"><i class="fa fa-user"></i> Profile</a></li>
+								<li><a (click)="logout()" class="dropdown-item"><i class="fa fa-sign-out"></i> Sign off</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="page-wrapper">
+				<app-ng7-bootstrap-breadcrumb></app-ng7-bootstrap-breadcrumb>
+				<router-outlet (activate)="onActivate($event)"></router-outlet>
+			</div>
+		</div>	
+	</div>
+</div>
+
+		
+

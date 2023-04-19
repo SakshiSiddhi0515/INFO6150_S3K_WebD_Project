@@ -1,0 +1,81 @@
+<div [@fadeIn]>
+	<div class="row artist-section">
+		<div class="col-md-4">
+			<div class="thumbnail-image-artist" *ngIf="artist">
+				<div class="artist-image">
+					<img src="../../../assets/images/cover.jpg" alt="...">
+				</div>
+				<div class="artist-name">
+					<h5>{{ artist.name }}</h5>
+					<h6>{{ artist.description }}</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row album-section">
+		<div class="col-md-12">
+			<h3>Albums</h3>
+			<div class="row">
+		<div class="col-xs-12 col-12">
+			<pager
+			[totalItems]="totalItems"
+			[(ngModel)]="page"
+			(pageChanged)="pageChanged($event)"
+			pageBtnClass="btn"
+			[itemsPerPage]="4"
+			class="pull-right">
+			</pager>
+		</div>
+	</div>
+		</div>
+		<ul class="col-sm-6 col-md-6 col-lg-3 album-wrapper" *ngFor="let album of albums">
+			<div class="thumbnail-album" (click)="getSongs(album._id)" [class.selected]="albumSelected === album._id">
+				<div class="album-image">
+					<img src="../../../assets/images/cover.jpg" alt="...">
+				</div>
+				<div class="album-name">
+					<h5>{{ album.name }}</h5>
+				</div>
+			</div>
+		</ul>
+
+		<p *ngIf="!albums || albums.length == 0">
+			<alert type="danger">
+				<strong>Oh snap!</strong> There are no album for this artist
+			</alert>
+		</p>
+	</div>
+	<div class="row song-section" [class.hidden]="!songSectionShow">
+		<div class="col-md-12">
+			<h3>Songs</h3>
+		</div>
+		<div class="col-md-12">
+			<table class="table table-striped" *ngIf="songs && songs.length > 0">
+				<thead>
+					<th>#</th>
+					<th>Song</th>
+					<th>Duration</th>
+					<th></th>
+				</thead>
+				<tbody>
+					<tr *ngFor="let song of songs">
+						<td>{{ song.number }}</td>
+						<td>{{ song.name }}</td>
+						<td>{{ song.duration }}</td>
+						<td class="column-play"><button class="btn" (click)="playSong(song)"><i class="fa fa-play-circle fa-2x"></i></button></td>
+					</tr>
+				</tbody>
+			</table>
+			<p *ngIf="!songs || songs.length == 0">
+				<alert type="danger">
+					<strong>Oh snap!</strong> There are no songs for this album
+				</alert>
+			</p>
+		</div>
+		
+	</div>
+
+	<div *ngIf="testBool">
+	<audio controls src="../../../assets/localSongs/Number.mp3"></audio>
+	</div>
+</div>

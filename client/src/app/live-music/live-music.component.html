@@ -1,0 +1,36 @@
+<div class="form-inline justify-content-center mb-3">
+  <input type="search" #newquery [value]="query" (keydown.enter)="submit(newquery.value)" class="form-control form-control-lg w-75"
+    placeholder="enter song title or artist name...">
+  <button (click)="submit(newquery.value)" class="btn btn-primary btn-lg m-3" type="button">Search</button>
+</div>
+<br>
+
+<div *ngIf="results">
+  <p *ngIf="!results.length">
+    No results were found for the query '{{ query }}'.
+  </p>
+
+  <div class="row" *ngIf="results.length">
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-10 offset-1 offset-md-0 offset-sm-0 offset-lg-0 mb-3 " *ngFor="let track of results">
+      <div class="card h-100">
+        <img class="card-img-top" src="{{ track.album.images[0].url }}" alt="{{track.album.name}} cover art">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a [routerLink]="['/dashboard/liveTracks', track.id]" class="track-name" >{{track.name}}</a>
+            </h5>
+          <p class="card-text">
+            <a [routerLink]="['/dashboard/liveArtists', track.artists[0].id]" class="artist-name">{{track.artists[0].name}}</a>
+            <br/> 
+            <a [routerLink]="['/dashboard/liveAlbums', track.album.id]" class="album-name" >{{track.album.name}}</a>
+          </p>
+          
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" type="button" (click)="playSong(track.id)">Send to DJ</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

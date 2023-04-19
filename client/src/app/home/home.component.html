@@ -1,0 +1,86 @@
+<div [@fadeIn]>
+	<div class="row row-artist-section">
+		<div class="col-md-4">
+			<span>Artists</span>
+		</div>
+		<div class="col-md-2 offset-md-6">
+			<div class="btn-group pull-right" role="group" aria-label="Basic example">
+				<a [routerLink]="['/dashboard/home/'+prePage]" class="btn"><i class="fa fa-angle-left"></i></a>
+				<a [routerLink]="['/dashboard/home/'+nextPage]" *ngIf="nextPage" class="btn"><i class="fa fa-angle-right"></i></a>
+				<a *ngIf="!nextPage" class="btn"><i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-lg-3 artist-card-wrapper" *ngFor="let artist of artists">
+			<a [routerLink]="['/dashboard/artist-detail/'+artist._id]" class="link-artist-name">
+				<div class="card-deck artist-card-deck">
+					<div class="card artist-card">
+						<img class="card-img-top" src="../../assets/images/cover.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h6 class="card-title">{{ artist.name }}</h6>
+							<p class="card-text"><small class="text-muted">{{ artist.description }}</small></p>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<div [ngClass]="{ 
+				'col-md-12 col-lg-12' : this.topSongs && this.topSongs.length == 0,
+				'col-md-8 col-lg-8' : this.topSongs && this.topSongs.length > 0
+			}">
+			<div class="row row-album-section">
+				<div class="col-md-12">
+					<span>Albums</span>
+				</div>
+			</div>
+			<div class="row album-wrapper">
+				<div class="col-md-12 col-lg-6 col-xl-4" *ngFor="let album of lastAlbums">
+					<a class="link-album" [routerLink]="['/dashboard/artist-detail/'+album.artist._id+'/'+album._id]">
+						<div class="card-deck album-card-deck">
+							<div class="card album-card">
+								<div class="image-album-wrapper">
+									<img class="card-img-top" src="../../assets/images/cover.jpg" alt="Card image cap">
+								</div>
+								<div class="card-body">
+									<div class="card-title">{{ album.title }}</div>
+									<p class="card-text"><small class="text-muted">{{ album.artist.name }}</small></p>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-lg-4" *ngIf="this.topSongs && this.topSongs.length > 0">
+			<div class="row row-album-section">
+				<div class="col-md-12 top-songs">
+					<span>Top Songs</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 song-wrapper">
+					<ul *ngFor="let song of topSongs">
+						<div class="card">
+							<div class="row ">
+								<div class="col-md-12 col-lg-4">
+									<img style="border-top-left-radius: .25rem; border-bottom-left-radius: .25em;" src="../../assets/images/cover.jpg" class="w-100">
+								</div>
+								<div class="col-md-8 px-1">
+									<div class="card-block px-1 song-top-card">
+										<h6 class="card-title">{{ song.name }}</h6>
+										<div class="card-text"><small class="text-muted">{{ song.album.title }}</small></div>
+										<div class="card-text"><small class="text-muted">{{ song.album.artist.name }}</small></div>
+									</div>
+								</div>		  
+							</div>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

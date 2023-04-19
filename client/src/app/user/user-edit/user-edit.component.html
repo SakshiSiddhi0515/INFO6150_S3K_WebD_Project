@@ -1,0 +1,70 @@
+<app-messages></app-messages>
+<div class="user-edit-component" [@fadeIn]>
+    <div class="page-header">
+        <h1>{{ title }}</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngFor="let alert of alerts">
+                <alert [type]="alert.type"><span [innerHtml]="alert.msg"></span></alert>
+            </div>
+        </div>
+    </div>
+    
+    <form #editUser="ngForm" (ngSubmit)="onSubmit()" *ngIf="user">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-8">
+            
+                <div class="form-group">   
+                    <label for="name">Name</label>
+                    <input type="text" #name="ngModel" [(ngModel)]="user.name" name="name" class="form-control" required />
+                    <div *ngIf="!name.valid && name.touched" class="alert alert-danger">Name is required </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" #lastname="ngModel" [(ngModel)]="user.lastname" name="lastname" class="form-control" required />
+                    <div *ngIf="!lastname.valid && lastname.touched" class="alert alert-danger">Lastname is required </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [disabled]="detailProfile" type="email" #email="ngModel" [(ngModel)]="user.email" name="email" class="form-control" required [email]="true" />
+                    <div *ngIf="!email.req && email.touched" class="alert alert-danger">Email is invalid </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Role</label>
+                    <select class="form-control" #role="ngModel" [(ngModel)]="user.role" name="role">
+                        <option value="ROLE_ADMIN" [selected] = "user.role == 'ROLE_ADMIN'">Administrator</option>
+                        <option value="ROLE_USER" [selected] = "user.role == 'ROLE_USER'">User</option>
+                    </select>
+                </div>
+                <div class="form-group" *ngIf="buttonTitle == 'Create'">
+                    <label for="password">Password</label>
+                    <input type="password" #password="ngModel" [(ngModel)]="user.password" name="password" class="form-control" required />
+                </div>
+                <p class="hidden">
+                    <input type="file" id="inputImageUser" (change)="fileChangeEvent($event)" />
+                </p>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4">
+                <label>Profile picture</label>
+                <div class="thumbnail-profile">
+                    <img class="picture-profile" [src]="userImg" alt="...">
+                    <button type="button" class="btn btn-default btn-xs pull-right" (click)="selectImage()">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <input [disabled]="!editUser.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right" value="{{ buttonTitle }}">
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <a class="btn btn-lg btn-block btn-warning" [routerLink]="['/dashboard/user-list']">Cancel</a>
+            </div>
+        </div>
+    </form>
+    
+</div>
+        
