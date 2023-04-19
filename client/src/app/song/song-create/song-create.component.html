@@ -1,0 +1,48 @@
+<app-messages></app-messages>
+<div class="component" [@fadeIn]>
+    <div class="page-header">
+        <h1>{{ title }}</h1>
+    </div>
+    <form #createSong="ngForm" (ngSubmit)="onSubmit()" *ngIf="song">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" title="ngModel" [(ngModel)]="song.name" name="name" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="number">Number</label>
+                    <input type="number" #number="ngModel" [(ngModel)]="song.number" name="number" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration</label>
+                    <input type="text" #duration="ngModel" [(ngModel)]="song.duration" name="duration" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" #gender="ngModel" [(ngModel)]="song.gender" name="gender" required>
+                        <option value="ROCK" [selected] = "song.gender == 'ROCK'">Rock</option>
+                        <option value="POP" [selected] = "song.gender == 'POP'">Pop</option>
+                        <option value="JAZZ" [selected] = "song.gender == 'JAZZ'">Jazz</option>
+                        <option value="DANCE" [selected] = "song.gender == 'DANCE'">Dance</option>
+                        <option value="REGGUE" [selected] = "song.gender == 'REGGUE'">Reggue</option>
+                        <option value="RAP" [selected] = "song.gender == 'RAP'">Rap</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputImage">File</label>
+                    <input type="file" id="inputImage" name="file" class="form-control-file" (change)="uploadFile($event)" required />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <input [disabled]="!createSong.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right" value="{{ title }}">
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <a class="btn btn-lg btn-block btn-warning" [routerLink]="['/dashboard/songs/'+idArtist+'/'+albumId]">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+        

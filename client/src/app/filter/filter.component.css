@@ -1,0 +1,27 @@
+.song-card{
+    padding: 2%;
+}
+
+.song-description{
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(52, 58, 64, 0.7);
+    color: #DDD;
+    font-size: 1em;
+    text-align: center;
+}
+
+.song-description h6{
+    font-size: 1em;
+}
+
+.pagination-btn a{
+    cursor: pointer;
+}
+
+@media (max-width: 575.98px) { 
+    .song-description{
+        height: 100px;
+    }
+}

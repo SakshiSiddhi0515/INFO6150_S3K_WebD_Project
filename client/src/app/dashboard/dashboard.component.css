@@ -1,0 +1,353 @@
+.wrapper{
+    display: flex;
+    min-height: 100vh
+}
+
+.nav-content{
+    background-color: #383d41;
+}
+
+.container-wrapper{
+    background-color: #fbfbfb;
+}
+
+.nav.sidebar {
+    position: fixed;
+    width: 14.666667%;
+}
+
+.nav-header{
+    position: relative;
+    align-items: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    float: left;
+    height: 70px;
+    text-align: center;
+    width: 100%;
+    margin-right: 0;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-logo-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.project-logo-link .project-title {
+    margin-left: 10px;
+    font-weight: 100;
+    color: #fff;
+    font-size: 18px;
+}
+
+.nav.inner-nav{
+    /*display: flex;*/
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav .menu-caption {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    color: #e8edf7;
+    padding: 20px 20px 5px;
+} 
+
+.menu-caption label {
+    padding: 20px 5px 5px;
+}
+
+.nav .item-menu {
+    position: relative;
+}
+
+.nav-item a {
+    text-align: left;
+    padding: 7px 15px;
+    margin: 5px 0 0;
+    display: block;
+    border-radius: 0;
+    position: relative;
+    color: #a9b7d0;
+}
+
+.nav-item a i{
+    font-size: 1rem;
+    padding: 4px 7px;
+    margin-right: 7px;
+    border-radius: 4px;
+    width: 30px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 30px;
+    text-align: center;
+}
+
+.nav-item a span.nav-item-text {
+    top: 11px;
+    font-size: 16px;
+}
+
+.show-menu-item{
+    display: none;
+}
+
+.dropdown-toggle::after{
+    display: none;
+}
+
+.dropdown .dropdown-toggle{
+    line-height: 70px;
+    display: inline-block;
+    padding-right: 70px;
+}
+
+.ml-auto .dropdown-menu {
+    margin-right: 20px;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    border: none;
+    margin-top: 0px;
+    min-width: 17em;
+}
+
+.dropdown .profile-notification{
+    padding: 0;
+    line-height: 1.4;
+    overflow: hidden;
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+    background-color: #f8f9fa;
+}
+
+.dropdown .profile-notification .pro-head {
+    color: #fff;
+    border-radius: 0.25rem 0.25rem 0 0;
+    padding: 15px;
+    position: relative;
+    background: #04a9f5;
+}
+
+.ml-auto .dropdown .dropdown-toggle img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.ml-auto .dropdown .dropdown-toggle i {
+    margin-left: 10px;
+}
+
+.img-radius {
+    border-radius: 50%;
+}
+
+.dropdown .profile-notification .pro-body {
+    padding: 20px 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.dropdown .profile-notification .pro-body li a {
+    color: #888;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.dropdown.drp-user.show:before {
+    color: #04a9f5;
+}
+
+.dropdown.show:before {
+    content: "\63";
+    font-family: "pct";
+    position: absolute;
+    left: 120px;
+    top: 65px;
+    z-index: 1001;
+    font-size: 40px;
+    line-height: 0;
+    color: #f8f9fa;
+    text-shadow: 0 -2px 2px rgba(65, 76, 78, 0.12);
+}
+
+.dropdown.drp-user.show:before {
+    color: #04a9f5;
+}
+
+/*.player-wrapper{
+    bottom: 0px;
+    background: #343a40;
+    height: 10vh;
+}
+
+.player-wrapper .album-image {
+    width: 15%;
+    display: block;
+    margin: 0px;
+    float: left;
+    padding: 5%;
+}*/
+
+.album-image{
+    padding: 5%;
+}
+
+.album-image span img {
+    height: 120px;
+    display:block;
+    margin:auto;
+}
+
+.audio-file{
+    margin: 0 auto;
+}
+
+.song-description{
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 2px;
+    min-height: 42px;
+}
+
+.player-wrapper{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+#play-song-artist{
+    display: block;
+}
+
+#play-song-title{
+    display: block;
+}
+
+#player{
+    width: 186px; 
+    height: 30px;
+    /* margin-left: 20%; */
+    margin: 0 auto;
+    display: block;
+}
+
+.player .album-image{
+    float:left;
+    width: 138px;
+    height: 105px;
+    overflow: hidden;
+}
+
+.player .album-image img {
+    height: 100%;
+
+}
+
+.player .audio-file{
+    width: 85%;
+    height: 40px;
+    margin-top: 7px;
+    margin-left: 10px;
+    float: left;
+}
+
+.player audio{
+    width: 100%;
+    height: 40px;
+}
+
+.btn-play, .btn-pause, 
+.btn-play:active, .btn-pause:active,
+.btn-play:hover, .btn-pause:hover,
+.btn-play:focus, .btn-pause:focus{
+    color: #a9b7d0;
+    background-color: #383d41;
+    border: none;
+    box-shadow: none;
+}
+
+.btn-play:hover, .btn-pause:hover{
+    color: white !important;
+}
+
+.nav-link:hover{
+    color: white !important;
+}
+
+.nav-link.active::after {
+    content: "→";
+    float: right;
+}
+
+.dropdown-item{
+    cursor: pointer;
+}
+
+.profile-notification ul li .dropdown-item.active, .dropdown-item:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #007bff;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) { 
+
+    .nav.sidebar{
+        width: 100%;
+    }
+
+    .show-menu-item{
+        display: flex;
+    }
+
+    .ml-auto .dropdown .dropdown-toggle{
+        padding-right: 0px;
+    }
+
+    .ml-auto .dropdown .dropdown-toggle span{
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767.98px) { 
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991.98px) { 
+    .ml-auto .dropdown .dropdown-toggle{
+        padding-right: 0px;
+    }
+    .nav-content{
+        display: flex;
+        padding: 0px;
+    }
+
+    .nav.sidebar{
+        width: 100%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1199.98px) { 
+    .ml-auto .dropdown .dropdown-toggle{
+        padding-right: 0px;
+    }
+}

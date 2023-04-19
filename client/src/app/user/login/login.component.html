@@ -1,0 +1,100 @@
+<div class="container-fluid" [@fadeIn]>
+	<div class="row" *ngIf="!identity">
+		<div class="col-sm-12 col-md-4 offset-md-7 app-form-segment">
+			<div class="row login-header">
+				<div class="col-md-12">
+					<div class="wrapper-logo">
+						<div class="icon-logo">
+							<i class="fa fa-music fa-3x fa-icon-logo"></i>
+						</div>
+						<span class="title">Music!</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 login-title">
+					{{ title }}
+				</div>
+			</div>
+			
+			<div class="row login-container">
+				<div class="col-md-12">
+					<div *ngIf="loginForm">
+						<div class="row">
+							<div class="col-md-12 login-description" [innerHTML]="">
+								Don´t have an account? <a class="link-create" (click)="showCreateForm()">Creat your account</a>, it takes less then a minute
+							</div>
+						</div>
+						<form #loginForm="ngForm" (ngSubmit)="onSubmit()" >
+							
+							<app-messages></app-messages>
+						
+							<p>
+								<input placeholder="Email:" type="text" #email="ngModel" [(ngModel)]="user.email" name="email" class="form-control" required />
+								<span class="login-error" *ngIf="!email.valid && email.touched">
+									Email is required.
+								</span>
+							</p>
+							<p>
+								<input placeholder="Password:" type="password" #password="ngModel" [(ngModel)]="user.password" name="password" class="form-control" required />
+								<span class="login-error" *ngIf="!password.valid && password.touched">
+									Password is required.
+								</span>
+							</p>
+							<p>
+								<button type="submit" class="btn btn-login" [disabled]="!loginForm.valid">Log In</button>
+							</p>
+							
+						</form>
+					</div>
+					<div *ngIf="!loginForm">
+						<div class="row">
+							<div class="col-md-12" >
+								<app-messages></app-messages>
+							</div>
+						</div>
+						<form #createUser="ngForm" (ngSubmit)="addUser()">
+							<p>
+								<input placeholder="Name:" type="text" #name="ngModel" [(ngModel)]="userToCreate.name" name="name" class="form-control" required>
+								<span class="login-error" *ngIf="!name.valid && name.touched">
+									Name is required.
+								</span>
+							</p>
+							
+							<p>
+								<input placeholder="Lastname:" type="text" #lastname="ngModel" [(ngModel)]="userToCreate.lastname" name="lastname" class="form-control" required>
+								<span class="login-error" *ngIf="!lastname.valid && lastname.touched">
+									Lastname is required.
+								</span>
+							</p>
+							<p>
+								<input placeholder="Email:" type="text" #email="ngModel" [(ngModel)]="userToCreate.email" name="email" class="form-control" required>
+								<span class="login-error" *ngIf="!email.valid && email.touched">
+									Email is required.
+								</span>
+							</p>
+							<p>
+								<input placeholder="Password:" type="password" #password="ngModel" [(ngModel)]="userToCreate.password" name="password" class="form-control" required>
+								<span class="login-error" *ngIf="!password.valid && password.touched">
+									Password is required.
+								</span>
+							</p>
+							<p>
+								<button type="submit" class="btn btn-create-account" [disabled]="!createUser.valid">Create account</button>
+								<a (click)="showLoginForm()">I already have an account</a>
+							</p>
+							
+							
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row login-footer">
+				<div class="col-md-12">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
