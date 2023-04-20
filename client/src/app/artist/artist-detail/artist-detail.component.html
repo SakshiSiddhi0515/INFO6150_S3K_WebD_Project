@@ -38,6 +38,9 @@
 				</div>
 			</div>
 		</ul>
+		<div *ngIf="showSong">
+			<audio controls autoplay [src]="songSource"></audio>
+		</div>
 
 		<p *ngIf="!albums || albums.length == 0">
 			<alert type="danger">

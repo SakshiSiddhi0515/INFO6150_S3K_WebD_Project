@@ -10,7 +10,8 @@ var SongSchema = Schema({
     duration: String,
     file: String,
     gender: String,
-    album : { type: Schema.ObjectId, ref:'Album' }
+    songName: String,
+    album : { type: Schema.ObjectId, ref:'Album' },
 })
 
 SongSchema.plugin(paginate);

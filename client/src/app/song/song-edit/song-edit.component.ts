@@ -36,7 +36,7 @@ export class SongEditComponent implements OnInit{
         private ng7BootstrapBreadcrumbService: Ng7BootstrapBreadcrumbService
     ){
         this.title = 'Edit Song';
-        this.song = new Song('','',0,'','','','');
+        this.song = new Song('','',0,'','','','','');
         this.token = this._userService.getTokenInLocalStorage();
         this.albumId =  this._route.snapshot.params.albumId;
         this.idArtist =  this._route.snapshot.params.idArtist;
