@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit, DoCheck {
 		this.token = _userService.getTokenInLocalStorage();
 		this.url = GLOBAL.url;
 		this.profileImage = 'assets/images/default-user-image.png'
-		this.song = new Song("","",1,"","","","");
+		this.song = new Song("","",1,"","","","","");
 		this.fullSideBar = true;
 		this.playing = false;
 	}

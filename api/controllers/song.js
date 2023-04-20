@@ -9,7 +9,7 @@ const path = require('path');
 
 function save(req, res) {
     var param = req.body;
-    if(param.number && param.name && param.duration && param.gender && param.album){
+    if(param.number && param.name && param.duration && param.gender && param.album && param.songName){
         var song = new Song();
         song.number = param.number;
         song.name = param.name;
@@ -17,6 +17,7 @@ function save(req, res) {
         song.gender = param.gender;
         song.file = null;
         song.album = param.album;
+        song.songName = param.songName;
 
         song.save((error, songStored) => {
             if(error){

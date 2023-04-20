@@ -29,7 +29,8 @@ export class ArtistDetailComponent implements OnInit {
 	public page: number;
 	public totalItems:number;
 	public idArtist: string;
-	public testBool = false;
+	public showSong = false;
+	public songSource: String;
 
   	constructor(
 		private _artistService: ArtistService,
@@ -109,8 +110,10 @@ export class ArtistDetailComponent implements OnInit {
 
 
 	playSong(song){
-		this.play.emit(song);
-		this.testBool = true;
+		// this.play.emit(song);
+		this.showSong = false;
+		this.songSource = "../../../assets/localSongs/" + song.songName;
+		this.showSong = true;
 		// const data = {name: song.name, path: '../../../assets/localSongs/Number.mp3'};
 		// this._artistService.setCurrentSong(data);
 	}

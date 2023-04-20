@@ -30,6 +30,7 @@
     "ngx-bootstrap": "^3.3.0",
     "ngx-feather-icon": "0.0.3",
     "rxjs": "~6.3.3",
+    "streamsaver": "^2.0.6",
     "tar": "^4.4.13",
     "tslib": "^1.13.0",
     "zone.js": "~0.8.26"
@@ -41,6 +42,7 @@
     "@types/jasmine": "^2.8.17",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "~8.9.4",
+    "@types/streamsaver": "^2.0.1",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

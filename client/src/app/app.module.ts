@@ -49,6 +49,7 @@ import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/
 import { LiveMusicArtistComponent } from './live-music-artist/live-music-artist.component';
 import { LiveMusicAlbumComponent } from './live-music-album/live-music-album.component';
 import { LiveMusicTrackComponent } from './live-music-track/live-music-track.component';
+import { InputFileComponent } from './input-file/input-file.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { LiveMusicTrackComponent } from './live-music-track/live-music-track.com
     LiveMusicComponent,
     LiveMusicArtistComponent,
     LiveMusicAlbumComponent,
-    LiveMusicTrackComponent
+    LiveMusicTrackComponent,
+    InputFileComponent
   ],
   imports: [
     BrowserModule,

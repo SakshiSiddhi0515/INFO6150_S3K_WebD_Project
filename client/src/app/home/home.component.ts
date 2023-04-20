@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
 							sg.album.artist = response.count[i].artist;
 						}
 						
-						array.push(new Song(sg._id,sg.name,sg.number,sg.gender,sg.file,sg.duration,sg.album));	
+						array.push(new Song(sg._id,sg.name,sg.number,sg.gender,sg.file,sg.duration,sg.album,''));	
 					}
 					this.topSongs = array;
 					
