@@ -8,7 +8,12 @@
 }
 
 .container-wrapper{
-    background-color: #fbfbfb;
+    background-color: #f9b38417;
+}
+
+.footer-container {
+    margin-top: -5rem;
+    margin-bottom: -5rem;
 }
 
 .nav.sidebar {
@@ -114,7 +119,7 @@
 .dropdown .dropdown-toggle{
     line-height: 70px;
     display: inline-block;
-    padding-right: 70px;
+    /* padding-right: 70px; */
 }
 
 .ml-auto .dropdown-menu {
@@ -308,6 +313,7 @@
 .header {
     background-color: #333;
     color: #fff;
+    margin-bottom: 2rem;
   }
   
   .header .navbar-brand {
@@ -323,7 +329,7 @@
     color: #fff;
   }
   
-  .header .navbar-nav .nav-link {
+  .header .navbar-nav .nav-link-header {
     font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
@@ -334,13 +340,13 @@
     padding: 0 15px;
   }
   
-  .header .navbar-nav .nav-link:hover {
+  .header .navbar-nav .nav-link-header:hover {
     color: #f9b384;
     border-bottom-color: #f9b384;
   }
   
-  .header .navbar-nav .nav-link.active,
-  .header .navbar-nav .nav-link.active:hover {
+  .header .navbar-nav .nav-link-header.active,
+  .header .navbar-nav .nav-link-header.active:hover {
     color: #f9b384;
     border-bottom-color: #f9b384;
   }
@@ -395,6 +401,10 @@
     margin-right: 10px;
   }
 
+  .subscribe-button {
+    margin-top: 1rem;
+  }
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575.98px) { 
 
@@ -425,13 +435,13 @@
         margin-top: 10px;
       }
     
-      .header .navbar-nav .nav-link {
+      .header .navbar-nav .nav-link-header {
         padding: 5px 0;
         color: #fff;
         border-bottom: 1px solid #fff;
       }
     
-      .header .navbar-nav .nav-link:hover {
+      .header .navbar-nav .nav-link-header:hover {
         color: #f9b384;
         border-bottom: 1px solid #f9b384;
       }

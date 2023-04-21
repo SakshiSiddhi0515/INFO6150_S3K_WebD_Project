@@ -4,7 +4,7 @@
     padding: 0;
   }
   
-  body {
+  .fullPage {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -12,7 +12,7 @@
     
   }
   
-  header {
+  .topData {
     position: relative;
     height: 100vh;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6));
@@ -22,6 +22,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 1;
+    opacity: 0.4;
   }
   
   nav {
@@ -33,6 +35,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    /* z-index: 1; */
   }
   
   .logo h1 {
@@ -58,7 +61,7 @@
   }
   
   .hero {
-    z-index: 1;
+    /* z-index: 1; */
   }
   
   .hero h1 {
@@ -84,17 +87,23 @@
   }
   
   .video-container {
-    position: relative;
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    bottom: 0;
+    right: 0;
+    z-index: -1;
   }
   
   .video-container video {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  
+    /* z-index: -1; */
+    object-fit: cover;
   }  
   
   .video-container .overlay {
