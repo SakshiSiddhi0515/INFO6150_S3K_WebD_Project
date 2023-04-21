@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgb(82, 82, 82);
+    
+  }
+  
+  header {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .logo h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .hero {
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .video-container {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+  }  
+  
+  .video-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    }
+    
+    @media only screen and (max-width: 768px) {
+    .hero h1 {
+    font-size: 40px;
+    }
+    .nav-links {
+    display: none;
+    }
+    }
+    
+    @media only screen and (max-width: 600px) {
+    .hero h1 {
+    font-size: 30px;
+    }
+    .btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    }
+    }
+    
+    @media only screen and (max-width: 480px) {
+    .hero h1 {
+    font-size: 24px;
+    }
+    .btn {
+    font-size: 14px;
+    padding: 6px 12px;
+    }
+    }
