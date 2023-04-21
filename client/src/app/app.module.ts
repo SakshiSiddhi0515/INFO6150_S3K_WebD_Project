@@ -50,6 +50,11 @@ import { LiveMusicArtistComponent } from './live-music-artist/live-music-artist.
 import { LiveMusicAlbumComponent } from './live-music-album/live-music-album.component';
 import { LiveMusicTrackComponent } from './live-music-track/live-music-track.component';
 import { InputFileComponent } from './input-file/input-file.component';
+import { SubscriptionPageComponent } from './subscription-page/subscription-page.component';
+import { SubscriptionPlansComponent } from './subscription-plans/subscription-plans.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +81,12 @@ import { InputFileComponent } from './input-file/input-file.component';
     LiveMusicArtistComponent,
     LiveMusicAlbumComponent,
     LiveMusicTrackComponent,
-    InputFileComponent
+    InputFileComponent,
+    SubscriptionPageComponent,
+    SubscriptionPlansComponent,
+    LandingPageComponent,
+    AboutusPageComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

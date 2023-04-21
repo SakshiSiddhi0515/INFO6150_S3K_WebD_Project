@@ -25,6 +25,10 @@ import { LiveMusicComponent } from '../live-music/live-music.component';
 import { LiveMusicArtistComponent } from '../live-music-artist/live-music-artist.component';
 import { LiveMusicTrackComponent } from '../live-music-track/live-music-track.component';
 import { LiveMusicAlbumComponent } from '../live-music-album/live-music-album.component';
+import { SubscriptionPageComponent } from '../subscription-page/subscription-page.component';
+import { AboutusPageComponent } from '../aboutus-page/aboutus-page.component';
+import { ContactUsComponent } from '../contact-us/contact-us.component';
+import { SubscriptionPlansComponent } from '../subscription-plans/subscription-plans.component';
 
 
 
@@ -245,7 +249,12 @@ const dashboardRoutes : Routes = [{
   		{ path: 'liveTracks/:id', component: LiveMusicTrackComponent },
   		{ path: 'liveAlbums/:id', component: LiveMusicAlbumComponent },
 		{ path : 'explore/:gender',component : FilterComponent },
-		{ path : 'explore/:gender/:page',component : FilterComponent }
+		{ path : 'explore/:gender/:page',component : FilterComponent },
+		{ path: '', component: ExploreComponent },
+		{ path: 'subscription-plans', component: SubscriptionPlansComponent },
+		{ path: 'contactus', component:  ContactUsComponent },
+		{ path: 'aboutus', component: AboutusPageComponent },
+		{ path : 'subscription', component : SubscriptionPageComponent },
 	]
 	
 }]

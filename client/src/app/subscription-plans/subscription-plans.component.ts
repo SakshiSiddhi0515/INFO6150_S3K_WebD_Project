@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-subscription-plans',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscriptionPlansComponent implements OnInit {
 
-  constructor() { }
+  constructor(  
+    private route: ActivatedRoute,
+    private router: Router,) { }
 
   ngOnInit() {
   }
 
-}
+  routeToPaymentPage() {
+    this.router
+      .navigate(['/dashboard/subscription'])};
+    }
+

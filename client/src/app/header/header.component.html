@@ -19,17 +19,17 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Artists</a>
+            <a [routerLink]="['/dashboard/subscription']" [routerLinkActive]="['active']" class="nav-link">Subscription</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Albums</a>
+            <a [routerLink]="['/dashboard/contactus']" [routerLinkActive]="['active']" class="nav-link">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Events</a>
+            <a [routerLink]="['/dashboard/aboutus']" [routerLinkActive]="['active']" class="nav-link">About Us</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

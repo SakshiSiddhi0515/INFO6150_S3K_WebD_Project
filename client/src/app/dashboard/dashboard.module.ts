@@ -12,12 +12,16 @@ import {Ng7BootstrapBreadcrumbModule} from "ng7-bootstrap-breadcrumb";
 import { AdminGuard } from '../services/admin.guard';
 import { UserService } from '../user/user.service';
 import { AuthGuard } from '../services/auth.guard';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 
 @NgModule({
     declarations : [
         DashboardComponent,
-        HomeComponent
+        HomeComponent,
+        HeaderComponent,
+        FooterComponent,
     ],
     imports : [
         Dashboard,
