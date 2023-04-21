@@ -28,9 +28,14 @@
 							<p>{{ song.album.artist.name }}</p>
 						</div>
 							
-						<div class="play-icon" (click)="playMusic(song)">
+						<div class="play-icon" (click)="playMusic(song)" *ngIf="playSound">
 							<div class="circle">
 								<div class="triangle"></div>
+							</div>
+						</div>
+						<div class="play-icon" (click)="pauseMusic(song)" *ngIf="!playSound">
+							<div class="circle">
+								<div class="square"></div>
 							</div>
 						</div>
 						<audio autoplay [src]="songSource"></audio>

@@ -25,6 +25,7 @@ export class FilterComponent implements OnInit {
 	public totalPage;  
 	public url: string;
 	public songSource: String;
+	public playSound = true;
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -76,7 +77,13 @@ export class FilterComponent implements OnInit {
 	}
 
 	playMusic(song) {
+		this.playSound = false;
 		this.songSource = "../../../assets/localSongs/" + song.songName;
+	}
+
+	pauseMusic() {
+		this.playSound = true;
+		this.songSource = " ";
 	}
 
 }
