@@ -305,6 +305,96 @@
     background-color: #007bff;
 }
 
+.header {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .header .navbar-brand {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+  }
+  .header .navbar-brand:hover{
+    color: #f9b384;
+  }
+  
+  .header .navbar-toggler-icon {
+    color: #fff;
+  }
+  
+  .header .navbar-nav .nav-link {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    padding: 0 15px;
+  }
+  
+  .header .navbar-nav .nav-link:hover {
+    color: #f9b384;
+    border-bottom-color: #f9b384;
+  }
+  
+  .header .navbar-nav .nav-link.active,
+  .header .navbar-nav .nav-link.active:hover {
+    color: #f9b384;
+    border-bottom-color: #f9b384;
+  }
+  
+  .footer {
+    padding: 123px 22px;
+    margin-top: 5rem;
+  }
+
+  .footer h4 {
+    color: #f9b384;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .footer .input-group {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .footer .form-control {
+    width: 100%;
+  }
+  
+  .footer .btn-primary {
+    background-color: #f9b384;
+    border-color: #f9b384;
+  }
+  
+  .footer .btn-primary:hover {
+    background-color: #fff;
+    color: #f9b384;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer ul li {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li i {
+    margin-right: 10px;
+  }
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575.98px) { 
 
@@ -327,7 +417,32 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 767.98px) { 
+    .header .navbar-toggler-icon {
+        color: #fff;
+      }
     
+      .header .navbar-nav {
+        margin-top: 10px;
+      }
+    
+      .header .navbar-nav .nav-link {
+        padding: 5px 0;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+    
+      .header .navbar-nav .nav-link:hover {
+        color: #f9b384;
+        border-bottom: 1px solid #f9b384;
+      }
+
+      .footer {
+        text-align: center;
+      }
+    
+      .footer .col-md-4 {
+        margin-bottom: 40px;
+      }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -343,6 +458,7 @@
     .nav.sidebar{
         width: 100%;
     }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

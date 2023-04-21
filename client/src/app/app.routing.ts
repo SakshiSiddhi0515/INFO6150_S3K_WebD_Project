@@ -6,14 +6,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user/login/login.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { InputFileComponent } from './input-file/input-file.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 const appRoutes : Routes = [
-    { path : '', redirectTo: 'create', pathMatch: 'full'  },
+    { path : '', redirectTo: 'getStarted', pathMatch: 'full'  },
+    { path : 'getStarted' , component: LandingPageComponent },
     { path : 'create' , component: LoginComponent   },
     { path : 'login', component : LoginComponent },
-    {path: 'input', component: InputFileComponent}
-    
+    { path: 'input', component: InputFileComponent}
 ]
 
 

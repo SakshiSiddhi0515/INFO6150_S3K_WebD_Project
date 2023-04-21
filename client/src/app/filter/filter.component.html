@@ -16,16 +16,24 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
-				<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 song-card" *ngFor="let song of songs; let i = index">
-					<div class="card ">
-						<div style="position:relative;">
-							<img class="card-img-top" src="../../assets/images/cover.jpg " alt="Card image cap">
-							<div class="song-description">
-								<h6 class="card-title"><span>{{ song.name }}</span></h6>
-								<div class="card-text">{{ song.album.title }}</div>
-								<div class="card-text">{{ song.album.artist.name }}</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let song of songs; let i = index">
+					<div class="card">
+						<div class="img-holder">
+							<img src="../../assets/images/cover.jpg " alt="Card image cap">
+						</div>
+						
+						<div class="song-description">
+							<h2>{{ song.name }}</h2>
+							<p>{{ song.album.title }}</p>
+							<p>{{ song.album.artist.name }}</p>
+						</div>
+							
+						<div class="play-icon" (click)="playMusic(song)">
+							<div class="circle">
+								<div class="triangle"></div>
 							</div>
 						</div>
+						<audio autoplay [src]="songSource"></audio>
 					</div>
 				</div>
 			</div>
