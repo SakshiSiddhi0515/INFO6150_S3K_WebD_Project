@@ -1,0 +1,141 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #bab9b9;
+  }
+  
+/* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 25px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  nav ul li a.active {
+    background-color: #fff;
+    color: #333;
+  }
+  /* Main styles */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20;
+}
+.intro {
+    text-align: center;
+    padding: 50px 0;
+    }
+    
+    .intro h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+    
+    .team {
+    padding: 50px 0;
+    }
+    
+    .member {
+    text-align: center;
+    margin: 63px;
+    display: inline-block;
+    text-align: center;
+    }
+    
+    .h2, h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border-image: auto;
+    }
+    
+    .member h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+    }
+    
+    .member p {
+    font-size: 18px;
+    color: rgb(68, 67, 67);
+    }
+    
+    .mission {
+    padding: 50px 0;
+    }
+    
+    .mission h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+    
+    .mission p {
+    font-size: 18px;
+    color: rgb(77, 77, 77);
+    line-height: 1.8;
+    }
+    
+    
+    
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+    header {
+    text-align: center;
+    }
+    
+    nav ul li {
+    display: block;
+    margin-bottom: 10px;
+    }
+    
+    .member {
+    margin: 30px auto;
+    display: block;
+    }
+    
+    .member img {
+    width: 100%;
+    height: auto;
+    }
+    }
+    
+    
