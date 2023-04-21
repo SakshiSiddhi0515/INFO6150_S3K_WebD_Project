@@ -1,0 +1,123 @@
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid #f0e8e8;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  h1 {
+    padding-top: 50px;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #3f3d3d;
+    margin-bottom: 8px;
+    border-radius: 50px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 16px;
+  }
+  
+  /* .payment-info {
+    display: none;
+  } */
+  
+  input[type="text"],
+  input[type="email"],
+  select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    box-shadow: 5px 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  button[type="submit"] {
+    background-color: #0d0d0e;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #5e6061;
+  }
+
+
+  /* input[type="radio"][name="payment"]:checked ~ .payment-info.credit-card,
+  input[type="radio"][name="payment"]:checked ~ .payment-info.debit-card {
+    display: block;
+  } */
+  .card-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  
+  .payment-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .card-icons i, .payment-icons i {
+    font-size: 32px;
+    margin-right: 8px;
+  }
+
+  /* .payment-info {
+    display: none;
+  } */
+
+  /* input[type="radio"][name="payment"]:checked ~ .payment-info.credit-card {
+    display: block;
+  }
+  
+  input[type="radio"][name="payment"]:checked ~ .payment-info.paypal {
+    display: block;
+  } */
+
+  .fab.fa-cc-visa {
+    color: #1a1f71;
+  }
+  
+  .fab.fa-cc-mastercard {
+    color: #fcb711;
+  }
+  
+  .fab.fa-cc-discover {
+    color: #ff6000;
+  }
+  
+  .fab.fa-cc-amex {
+    color: #156cb3;
+  }
+  .fab.fa-paypal {
+    color: #003087; /* Replace with your desired color */
+  }
+  
+  .fab.fa-apple-pay {
+    color: #000; /* Replace with your desired color */
+  }
+    
+  
+
+   
