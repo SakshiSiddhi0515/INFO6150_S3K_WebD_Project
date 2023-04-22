@@ -10,6 +10,7 @@ const AlbumSchema = Schema({
     description: String,
     year: Number,
     image: String,
+    albumPicSrc: String,
     artist: { type: Schema.ObjectId, ref: 'Artist' }
 });
 

@@ -4,7 +4,7 @@
 }
 
 .nav-content{
-    background-color: #383d41;
+    background-color: #343a40;
 }
 
 .container-wrapper{
@@ -84,7 +84,7 @@
     display: block;
     border-radius: 0;
     position: relative;
-    color: #a9b7d0;
+    color: #b4b6b8;
 }
 
 .nav-item a i{
@@ -334,7 +334,7 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #fff;
+    color: #b4b6b8;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
     padding: 0 15px;
@@ -343,12 +343,14 @@
   .header .navbar-nav .nav-link-header:hover {
     color: #f9b384;
     border-bottom-color: #f9b384;
+    text-decoration: none;
   }
   
   .header .navbar-nav .nav-link-header.active,
   .header .navbar-nav .nav-link-header.active:hover {
     color: #f9b384;
     border-bottom-color: #f9b384;
+    text-decoration: none;
   }
   
   .footer {
@@ -403,6 +405,14 @@
 
   .subscribe-button {
     margin-top: 1rem;
+  }
+
+  .brand-color {
+    color: #f9b384 !important;
+  }
+
+  .brand-color:hover {
+    color: #b4b6b8 !important;
   }
 
 /* Small devices (landscape phones, 576px and up) */

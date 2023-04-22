@@ -17,17 +17,18 @@
     font-family: inherit;
     font-size: 100%;
     padding: .5em 1em;
-    color: #444;
-    color: rgba(0,0,0,.8);
-    border: 1px solid #999;
+    color: #0c0000;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ffffff;
     border: transparent;
-    background-color: #E6E6E6;
     text-decoration: none;
     border-radius: 2px;
+    background-color: #f9b384;
+    color: #000000;
 }
 
 .card.bg-light.mb-3 {
-    background-image: linear-gradient(to right top, #3c4043, #364447, #324845, #374b3d, #444c33);
+    background-image: linear-gradient(to right top, #000000, #242323);
     
 }
 
@@ -36,3 +37,7 @@
     background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
     background-image: linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
 }
+
+/* .card-title{
+    color: #f7f1f1;
+} */

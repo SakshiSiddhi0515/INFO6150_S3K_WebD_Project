@@ -1,8 +1,3 @@
-.justify-content-center {
-    display: flex !important;
-    justify-content: center !important;
-}
-
 .edit-btn {
     color: white !important;
     background-color: black !important;
@@ -16,6 +11,16 @@
 .delete-btn {
     color: white !important;
     background-color: #f46161 !important;
+}
+
+.album-btn {
+    color: black !important;
+    background-color: #f9b384 !important;
+}
+
+.album-btn:hover {
+    color: white !important;
+    background-color: black !important;
 }
 
 .create-btn {

@@ -11,6 +11,7 @@ import { transAnimation } from "../../animation/animation";
 @Component({
   selector: 'app-user-create',
   templateUrl: '../user-edit/user-edit.component.html',
+  styleUrls: ['./user-create.component.css'],
 	providers: [UserService, UploadService, MessageService],
 	animations: [transAnimation]
 })

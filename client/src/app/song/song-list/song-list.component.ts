@@ -14,6 +14,7 @@ import { transAnimation } from "../../animation/animation";
 @Component({
     selector :'song-list',
     templateUrl:'./song-list.component.html',
+    styleUrls: ['./song-list.component.css'],
     providers: [UploadService, MessageService, UserService, SongService],
     animations: [transAnimation]
 })

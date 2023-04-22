@@ -13,6 +13,7 @@ import { HttpClient } from "@angular/common/http";
 @Component({
     selector :'song-create',
     templateUrl:'./song-create.component.html',
+    styleUrls: ['./song-create.component.css'],
     providers: [UploadService, MessageService, UserService, SongService],
     animations: [transAnimation]
 })

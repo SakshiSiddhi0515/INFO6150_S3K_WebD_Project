@@ -10,6 +10,7 @@ import { transAnimation } from "../../animation/animation";
 @Component({
     selector :'user-edit',
     templateUrl: './user-edit.component.html',
+    styleUrls: ['./user-edit.component.css'],
     providers: [UserService, UploadService],
     animations: [transAnimation]
 })

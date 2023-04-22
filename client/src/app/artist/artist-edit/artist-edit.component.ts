@@ -24,6 +24,7 @@ export class ArtistEditComponent implements OnInit{
     public artistImg: any;
     public filesToUpload: Array<File>;
     public url;
+    public baseUrl = '../../../assets/localSongs/'
 
     constructor(
         private _artistService: ArtistService,
@@ -35,7 +36,7 @@ export class ArtistEditComponent implements OnInit{
         private ng7BootstrapBreadcrumbService: Ng7BootstrapBreadcrumbService
     ){
         this.token = _userService.getTokenInLocalStorage();
-        this.artist = new Artist('','','','');
+        this.artist = new Artist('','','','','');
         this.title = 'Edit artist';
         this.artistImg = 'assets/images/default-user-image.png';
         this.url = GLOBAL.url;
@@ -80,8 +81,8 @@ export class ArtistEditComponent implements OnInit{
                     if(response.artist){
                         this.artist = response.artist;
                         this.ng7BootstrapBreadcrumbService.updateBreadcrumbLabels({artist: response.artist.name});
-                        if(this.artist.image){
-                            this.artistImg = this.url+'getImageArtist/'+this.artist.image;
+                        if(this.artist && this.artist.artistPicSrc){
+                            this.artistImg = this.baseUrl + this.artist.artistPicSrc;
                         }
                     }
                 },

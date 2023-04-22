@@ -8,10 +8,11 @@ function saveArtist(req, res) {
     var param = req.body;
     var artist = new Artist();
 
-    if(param.name && param.description){
+    if(param.name && param.description && param.artistPicSrc){
         artist.name = param.name;
         artist.description = param.description;
         artist.image = null;
+        artist.artistPicSrc = param.artistPicSrc;
 
         artist.save((error, artistStored) => {
             if(error){

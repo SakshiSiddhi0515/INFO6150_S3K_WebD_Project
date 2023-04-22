@@ -1,12 +1,12 @@
 <div class="wrapper">
 	<div class="col-6 col-md-4 col-lg-2 nav-content" ngClass="{'hidden' : !fullSideBar}">
 		<ul class="nav sidebar flex-column" > 
-			<li class="nav-header">
+			<li class="nav-header mt-3 justify-content-center">
 				<a routerLink="['dashboard/home']" class="project-logo-link">
 					<div class="icon-logo">
 						<i class="fa fa-music fa-3x fa-icon-logo"></i>
 					</div>
-					<span class="project-title">Music</span>
+					<span class="project-title"></span>
 				</a>
 			</li>
 			<li class="nav-item menu-caption">
@@ -47,23 +47,23 @@
 			</li>
 			<li>
 				<div class="col-4 col-lg-12 player-wrapper">
-					<div class="album-image">
+					<!-- <div class="album-image">
 						<span *ngIf="song.album" >
 							<img id="play-image-album" src="../../assets/images/music-default.png" />
 						</span>
 						<span *ngIf="!song.album">
 							<img id="play-image-album" src="../../assets/images/music-default.png" />
 						</span>
-					</div>
-					<p class="song-description">
+					</div> -->
+					<!-- <p class="song-description">
 						<span id="play-song-artist" *ngIf="song.album.artist">
 							{{ song.album.artist.name }}
 						</span>
 						<span id="play-song-title" *ngIf="song">
 							{{ song.name }}
 						</span>
-					</p>
-					<audio  (ended)="songFinished()" id="player">
+					</p> -->
+					<!-- <audio  (ended)="songFinished()" id="player">
 						<source id="mp3-source" src="" type="audio/mpeg">
 						Tu navegador no es compatible
 					</audio>
@@ -72,17 +72,17 @@
 					</button>
 					<button type="button" class="btn btn-lg btn-block btn-pause" (click)="stopSong()" *ngIf="playing">
 						<i class="fa fa-pause"></i>
-					</button>
+					</button> -->
 				</div>
 			</li>
 		</ul>	                        `	
 	</div>
-	<div class="col-12 col-md-8 col-lg-10 container-wrapper">
-		<div class="container" *ngIf="userLogged">
+	<div class="col-12 col-md-8 col-lg-10 container-wrapper p-0">
+		<div class="container p-0" *ngIf="userLogged">
 
 				<div class="header navbar navbar-expand-lg navbar-dark bg-dark">
 					<div class="container">
-					  <a class="navbar-brand" href="#">MyMusic</a>
+					  <a class="navbar-brand brand-color" href="#">MyMusic</a>
 					  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					  </button>
@@ -131,7 +131,7 @@
 					</div>
 				  </div>
 
-			<div class="page-wrapper">
+			<div class="page-wrapper p-3">
 				<app-ng7-bootstrap-breadcrumb></app-ng7-bootstrap-breadcrumb>
 				<router-outlet (activate)="onActivate($event)"></router-outlet>
 			</div>

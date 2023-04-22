@@ -3,7 +3,7 @@
 		<div class="col-md-4">
 			<div class="thumbnail-image-artist" *ngIf="artist">
 				<div class="artist-image">
-					<img src="../../../assets/images/cover.jpg" alt="...">
+					<img [src]="artist.artistPicSrc" alt="...">
 				</div>
 				<div class="artist-name">
 					<h5>{{ artist.name }}</h5>
@@ -31,7 +31,7 @@
 		<ul class="col-sm-6 col-md-6 col-lg-3 album-wrapper" *ngFor="let album of albums">
 			<div class="thumbnail-album" (click)="getSongs(album._id)" [class.selected]="albumSelected === album._id">
 				<div class="album-image">
-					<img src="../../../assets/images/cover.jpg" alt="...">
+					<img [src]="album.albumPicSrc" alt="...">
 				</div>
 				<div class="album-name">
 					<h5>{{ album.name }}</h5>

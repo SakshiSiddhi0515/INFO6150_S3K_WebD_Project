@@ -1,0 +1,19 @@
+.create-btn {
+    color: white;
+    background-color: #343a40;
+    transition: transform 0.2s ease-out;
+} 
+
+.create-btn:hover {
+    transform: translateY(-5px);
+} 
+
+.cancel-btn {
+    color: black;
+    background-color: #f9b384;
+    transition: transform 0.2s ease-out;
+}
+
+.cancel-btn:hover {
+    transform: translateY(-5px);
+}
