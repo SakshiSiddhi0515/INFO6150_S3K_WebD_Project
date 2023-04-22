@@ -2,21 +2,29 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css">
 </head>
 
-
 <h1>SUBSCRIBE</h1>
 
-<form>
-  <label for="name">Street</label>
-  <input type="text" id="name" name="name" required>
+<form [formGroup]="subForm" (ngSubmit)="onSubmit()">
+  <label>Street</label>
+  <input type="text" name="street" formControlName="street" required>
+  <div *ngIf="subForm.get('street').invalid && (subForm.get('street').dirty || subForm.get('street').touched)">
+    <div class="alert alert-danger">Street is required</div>
+  </div>
+
+  <label>Town</label>
+  <input type="text" name="town" formControlName="town" required>
+  <div *ngIf="subForm.get('town').invalid && (subForm.get('town').dirty || subForm.get('town').touched)">
+    <div class="alert alert-danger">Town is required</div>
+  </div>
   
-  <label for="email">Town</label>
-  <input type="email" id="email" name="email" required>
-  
-  <label for="creditCard">City</label>
-  <input type="text" id="creditCard" name="creditCard" required>
-  
-  <label for="states">Select a State:</label>
-  <select id="states" name="states">
+  <label>City</label>
+  <input type="text" name="city" formControlName="city" required>
+  <div *ngIf="subForm.get('city').invalid && (subForm.get('city').dirty || subForm.get('city').touched)">
+    <div class="alert alert-danger">City is required</div>
+  </div>
+
+  <label>Select a State:</label>
+  <select name="states" formControlName="state" required>
     <option value="N">None</option>
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
@@ -71,6 +79,10 @@
     <option value="WY">Wyoming</option>
   </select>
 
+  <div *ngIf="subForm.get('state').invalid && (subForm.get('state').dirty || subForm.get('state').touched)">
+    <div class="alert alert-danger">State is required</div>
+  </div>
+
   <h1>Payment Information</h1>
 
   <div class="payment-type">
@@ -97,21 +109,24 @@
 
   <div class="payment-info credit-card" *ngIf="showCardDetails">
     <label>Card Number:
-      <input type="text" name="card_number">
+      <input type="number" name="card_number" formControlName="cardNumber">
     </label>
+    <div *ngIf="subForm.get('cardNumber').invalid && (subForm.get('cardNumber').dirty || subForm.get('cardNumber').touched)">
+      <div class="alert alert-danger">Card Number is required</div>
+    </div>
 
     <label>Expiration Date:
-      <input type="text" name="expiration_date">
+      <input type="text" name="expiration_date" formControlName="date">
     </label>
 
     <label>Security Code:
-      <input type="text" name="security_code">
+      <input type="number" name="security_code" formControlName="cvv">
     </label>
   </div>
 
   <div class="payment-info paypal" *ngIf="showPaypalDetails">
     <label>PayPal Email:
-      <input type="email" name="paypal_email">
+      <input type="email" name="paypal_email" formControlName="email">
     </label>
   </div>
 
