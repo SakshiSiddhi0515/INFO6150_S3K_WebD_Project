@@ -1,3 +1,4 @@
+
 <div class="container-fluid" [@fadeIn]>
 	<div class="row" *ngIf="!identity">
 		<div class="col-sm-12 col-md-4 offset-md-7 app-form-segment">
@@ -22,7 +23,7 @@
 					<div *ngIf="loginForm">
 						<div class="row">
 							<div class="col-md-12 login-description" [innerHTML]="">
-								Don´t have an account? <a class="link-create" (click)="showCreateForm()">Creat your account</a>, it takes less then a minute
+								Don´t have an account? <a class="link-create" (click)="showCreateForm()">Create your account</a>, it takes less then a minute
 							</div>
 						</div>
 						<form #loginForm="ngForm" (ngSubmit)="onSubmit()" >
@@ -97,4 +98,3 @@
 		</div>
 	</div>
 </div>
-

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardModule } from "./dashboard/dashboard.module";
 
@@ -99,7 +99,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     BsDropdownModule.forRoot(),
     ButtonsModule.forRoot(),
     PaginationModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
