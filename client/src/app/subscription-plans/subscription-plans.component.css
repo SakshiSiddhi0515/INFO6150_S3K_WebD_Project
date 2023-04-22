@@ -2,25 +2,26 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 50px;
     align-items: stretch;
-    margin: 80px;
-    margin-top: 3rem;
+    margin: 0 auto;
+    margin-top: 3em;
+    max-width: 1200px; 
   }
   
   .card {
-    width: 300px;
+    width: 270px;
     margin: 10px;
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     overflow: hidden;
     box-sizing: border-box;
-  
+    margin-right: 30px;
     height: 100%; /* Added */
     display: flex; /* Added */
     flex-direction: column; /* Added */
-  
+    flex-basis: calc(33.33% - 20px);
     transition: all 0.3s ease-in-out;
     transform: scale(1);
   }
@@ -93,43 +94,15 @@
     margin-top: 50px;
   }
   
-  /* Media queries */
-  
-  @media screen and (max-width: 768px) {
-    /* Adjust card width and margin */
+  @media (max-width: 650px) {
+    .row {
+      flex-direction: column;
+    }
     .card {
-      width: 250px;
-      margin: 5px;
-    }
-  
-    /* Adjust font size */
-    .price {
-      font-size: 20px;
-    }
-  
-    li {
-      font-size: 16px;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    /* Adjust card width and margin */
-    .card {
+      margin-right: 0;
+      margin-bottom: 30px;
       width: 100%;
-      margin: 10px 0;
-    }
-  
-    /* Adjust font size */
-    .price {
-      font-size: 18px;
-    }
-  
-    li {
-      font-size: 14px;
-    }
-  
-    h1 {
-      font-size: 28px;
+      flex-basis: 100%;
     }
   }
   
