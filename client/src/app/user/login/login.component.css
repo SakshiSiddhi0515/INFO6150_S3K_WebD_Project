@@ -1,7 +1,8 @@
 /* LOGIN COMPONENT STYLE */
 .login-background{
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) !important;
+    /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12) !important; */
 }
+
 
 .btn-login, .btn-create-account{
     width: 100%;
