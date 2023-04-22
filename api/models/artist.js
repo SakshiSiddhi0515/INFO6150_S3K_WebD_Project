@@ -8,7 +8,8 @@ var schema = mongoose.Schema;
 var ArtistSchema = schema({
     name: String,
     description: String,
-    image: String
+    image: String,
+    artistPicSrc: String
 })
 
 

@@ -58,10 +58,10 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <input [disabled]="!editUser.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right" value="{{ buttonTitle }}">
+                <input [disabled]="!editUser.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right create-btn" value="{{ buttonTitle }}">
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a class="btn btn-lg btn-block btn-warning" [routerLink]="['/dashboard/user-list']">Cancel</a>
+                <a class="btn btn-lg btn-block btn-warning cancel-btn" [routerLink]="['/dashboard/user-list']">Cancel</a>
             </div>
         </div>
     </form>

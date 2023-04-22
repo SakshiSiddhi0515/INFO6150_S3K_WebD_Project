@@ -9,13 +9,14 @@ const path = require('path');
 
 function saveAlbum(req, res){
     var params = req.body;
-    if(params.title && params.description && params.year){
+    if(params.title && params.description && params.year && params.albumPicSrc){
         var album = new Album();
         album.title = params.title;
         album.description = params.description;
         album.year = params.year;
         album.image = null;
         album.artist = params.artist;
+        album.albumPicSrc = params.albumPicSrc;
 
         album.save((error, albumStored)=> {
             if(error){

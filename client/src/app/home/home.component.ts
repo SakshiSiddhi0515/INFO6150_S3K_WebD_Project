@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
 	public pageDefault: string;
 	public url: string;
 	public gender: string;
+	public baseSrc = '../../assets/localSongs/'
 
   	constructor(
 		private _artistService: ArtistService,
@@ -66,6 +67,13 @@ export class HomeComponent implements OnInit {
 				response => {
 					if(response.artists){
 						this.artists = response.artists.docs;
+						this.artists.forEach((e) => {
+							if(e.artistPicSrc && e.artistPicSrc.length){
+								e.artistPicSrc = this.baseSrc + e.artistPicSrc
+							} else {
+								e.artistPicSrc = '../../assets/images/cover.jpg';
+							}
+						})
 						if(response.artists.pages){
 							if(parseInt(response.artists.pages) == parseInt(response.artists.page)){
 								this.nextPage = false;
@@ -85,6 +93,13 @@ export class HomeComponent implements OnInit {
 			response => {
 				if(response.album){
 					this.lastAlbums = response.album;
+					this.lastAlbums.forEach((e) => {
+						if(e.albumPicSrc && e.albumPicSrc.length){
+							e.albumPicSrc = this.baseSrc + e.albumPicSrc
+						} else {
+							e.albumPicSrc = '../../assets/images/cover.jpg';
+						}
+					})
 				}
 			},
 			error => {

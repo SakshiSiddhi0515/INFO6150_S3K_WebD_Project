@@ -31,6 +31,7 @@ export class ArtistDetailComponent implements OnInit {
 	public idArtist: string;
 	public showSong = false;
 	public songSource: String;
+	public baseUrl = '../../../assets/localSongs/'
 
   	constructor(
 		private _artistService: ArtistService,
@@ -72,6 +73,13 @@ export class ArtistDetailComponent implements OnInit {
 			res => {
 				if(res.album){
 					this.albums = res.album.docs;
+					this.albums.forEach((e) => {
+						if(e.albumPicSrc){
+							e.albumPicSrc = this.baseUrl + e.albumPicSrc;
+						} else {
+							e.albumPicSrc = '../../../assets/images/cover.jpg';
+						}
+					})
 					this.totalItems = res.album.total;
 					if(this.albums.length > 0){
 						this.albumSelected = this._route.snapshot.paramMap.get("idAlbum");
@@ -99,6 +107,11 @@ export class ArtistDetailComponent implements OnInit {
 			response => {
 				if(response.artist){
 					this.artist = response.artist;
+					if(this.artist && this.artist.artistPicSrc){
+						this.artist.artistPicSrc = this.baseUrl + this.artist.artistPicSrc;
+					} else {
+						this.artist.artistPicSrc = '../../../assets/images/cover.jpg'
+					}
 					this.getAlbums(this.artist._id);
 				}
 			},

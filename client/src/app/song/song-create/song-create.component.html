@@ -19,7 +19,7 @@
                     <input type="text" #duration="ngModel" [(ngModel)]="song.duration" name="duration" class="form-control" required />
                 </div>
                 <div class="form-group">
-                    <label for="gender">Gender</label>
+                    <label for="gender">Category</label>
                     <select class="form-control" #gender="ngModel" [(ngModel)]="song.gender" name="gender" required>
                         <option value="ROCK" [selected] = "song.gender == 'ROCK'">Rock</option>
                         <option value="POP" [selected] = "song.gender == 'POP'">Pop</option>
@@ -37,10 +37,10 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <input [disabled]="!createSong.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right" value="{{ title }}">
+                <input [disabled]="!createSong.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right create-btn" value="{{ title }}">
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a class="btn btn-lg btn-block btn-warning" [routerLink]="['/dashboard/songs/'+idArtist+'/'+albumId]">Cancel</a>
+                <a class="btn btn-lg btn-block btn-warning cancel-btn" [routerLink]="['/dashboard/songs/'+idArtist+'/'+albumId]">Cancel</a>
             </div>
         </div>
     </form>

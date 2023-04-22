@@ -7,7 +7,7 @@
 	
 	<div class="row">
 		<div class="col-md-12">
-			<a class="btn btn-success pull-left btn-create" [routerLink]="['/dashboard/album-create/'+artistId]">Create Album</a>
+			<a class="btn btn-success pull-left btn-create create-btn" [routerLink]="['/dashboard/album-create/'+artistId]">Create Album</a>
 		</div>
 	</div>
 	<div class="row" *ngIf="!albums">
@@ -44,9 +44,9 @@
 								<td>{{ album.title }}</td>
                                 <td>{{ album.description }}</td>
                                 <td>{{ album.year }}</td>
-								<td><a [routerLink]="['/dashboard/album-edit/'+album.artist._id+'/'+album._id]" class="btn btn-warning">Edit</a></td>
-								<td><a class="btn btn-danger" (click)="openModal(template, album._id)">Delete</a></td>
-								<td><a class="btn btn-info" [routerLink]="['/dashboard/songs/'+album.artist._id+'/'+album._id]">Songs</a></td>
+								<td><a [routerLink]="['/dashboard/album-edit/'+album.artist._id+'/'+album._id]" class="btn btn-warning edit-btn">Edit</a></td>
+								<td><a class="btn btn-danger delete-btn" (click)="openModal(template, album._id)">Delete</a></td>
+								<td><a class="btn btn-info album-btn" [routerLink]="['/dashboard/songs/'+album.artist._id+'/'+album._id]">Songs</a></td>
 							</tr>
 						</tbody>
 					</table>

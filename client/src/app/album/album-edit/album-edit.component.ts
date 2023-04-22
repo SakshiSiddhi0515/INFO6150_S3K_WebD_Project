@@ -40,8 +40,8 @@ export class AlbumEditComponent implements OnInit {
         this.token = _userService.getTokenInLocalStorage();
         this.user = _userService.getUserLogged();
         this.title = 'Edit Album';
-        this.albumImg = 'assets/images/default-user-image.png';
-        this.album = new Album('','',1900,'','');
+        this.albumImg = '../../../assets/localSongs/';
+        this.album = new Album('','',1900,'','','');
         this.artistId = this._route.snapshot.params.idArtist;
         this.url = GLOBAL.url;
     }
@@ -61,8 +61,8 @@ export class AlbumEditComponent implements OnInit {
                     }else{
                         this.album = response.album;
                         this.ng7BootstrapBreadcrumbService.updateBreadcrumbLabels({album: response.album.title,artist: response.album.artist.name});
-                        if(this.album.image){
-                            this.albumImg = this.url+'album_get_image/'+this.album.image; 
+                        if(this.album && this.album.albumPicSrc){
+                            this.albumImg = this.albumImg + this.album.albumPicSrc; 
                         }
                     }
                 },

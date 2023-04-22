@@ -9,9 +9,11 @@ import { MessageService } from "../../messages/message.service";
 import { UploadService } from "../../services/upload.service";
 import { GLOBAL } from 'src/global';
 import { transAnimation } from "../../animation/animation";
+import { HttpClient } from "@angular/common/http";
 @Component({
     selector: 'album-create',
     templateUrl: './album-create.component.html',
+    styleUrls: ['./album-create.component.css'],
     providers : [ UserService,AlbumService,MessageService,UploadService ],
     animations: [transAnimation]
 })
@@ -25,6 +27,8 @@ export class AlbumCreateComponent implements OnInit {
     public artistId: string;
     public filesToUpload: Array<File>;
     public url:string;
+    selectedFile: any;
+    // public baseUrl = '../../../assets/localSongs/'
 
     constructor(
         private _albumService: AlbumService,
@@ -32,13 +36,14 @@ export class AlbumCreateComponent implements OnInit {
         private _messageService: MessageService,
         private _route: ActivatedRoute,
         private _router: Router,
-        private _uploadService: UploadService
+        private _uploadService: UploadService,
+        private http: HttpClient
     ){
         this.token = _userService.getTokenInLocalStorage();
         this.user = _userService.getUserLogged();
         this.title = 'Create Album';
         this.albumImg = 'assets/images/default-user-image.png';
-        this.album = new Album('','',1900,'','');
+        this.album = new Album('','',1900,'','','');
         this.artistId = this._route.snapshot.params.idArtist;
         this.url = GLOBAL.url;
     }
@@ -48,7 +53,9 @@ export class AlbumCreateComponent implements OnInit {
     }
 
     onSubmit(){
+        this.onUpload();
         this.album.artist = this.artistId;
+        this.album.albumPicSrc = this.selectedFile.name;
         this._albumService.saveAlbum(this.token,this.album).subscribe(
             response => {
                 if(!response.album){
@@ -78,26 +85,38 @@ export class AlbumCreateComponent implements OnInit {
         document.getElementById("inputImage").click();
     }
 
-    preview(files) {
-        if (files.length === 0)
+    preview() {
+        if (!this.selectedFile || !this.selectedFile.name)
           return;
      
-        var mimeType = files[0].type;
+        var mimeType = this.selectedFile.type;
         if (mimeType.match(/image\/*/) == null) {
           this._messageService.sendMessage("Only images are supported.","danger");
           return;
         }
      
         var reader = new FileReader();
-        this.albumImg = files;
-        reader.readAsDataURL(files[0]); 
+        this.albumImg = this.selectedFile;
+        reader.readAsDataURL(this.selectedFile); 
         reader.onload = (_event) => { 
             this.albumImg = reader.result; 
         }
 	}
 
     fileChangeEvent(fileInput: any){
-        this.filesToUpload = <Array<File>>fileInput.target.files;
-        this.preview(fileInput.target.files);
+        // this.filesToUpload = <Array<File>>fileInput.target.files;
+        // this.preview(fileInput.target.files);
+        this.selectedFile = fileInput.target.files[0];
+        this.preview();
+
 	}
+
+    onUpload() {
+        const formData = new FormData();
+        formData.append('file', this.selectedFile);
+        this.http.post('http://localhost:3000/upload', formData).subscribe(
+          (response) => console.log(response),
+          (error) => console.log(error)
+        );
+    }
 }

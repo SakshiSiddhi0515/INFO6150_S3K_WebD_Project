@@ -16,7 +16,7 @@
 			<a [routerLink]="['/dashboard/artist-detail/'+artist._id]" class="link-artist-name">
 				<div class="card-deck artist-card-deck">
 					<div class="card artist-card">
-						<img class="card-img-top" src="../../assets/images/cover.jpg" alt="Card image cap">
+						<img class="card-img-top" [src]="artist.artistPicSrc" alt="Card image cap">
 						<div class="card-body">
 							<h4 class="card-title">{{ artist.name }}</h4>
 							<p class="card-text"><small class="text-muted">{{ artist.description }}</small></p>
@@ -43,7 +43,7 @@
 						<div class="card-deck album-card-deck">
 							<div class="card album-card">
 								<!-- <div class="image-album-wrapper"> -->
-									<img class="card-img-top" src="../../assets/images/cover.jpg" alt="Card image cap">
+									<img class="card-img-top" [src]="album.albumPicSrc" alt="Card image cap">
 								<!-- </div> -->
 								<div class="card-body">
 									<h4 class="card-title">{{ album.title }}</h4>

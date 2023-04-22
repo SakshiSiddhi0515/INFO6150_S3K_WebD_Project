@@ -40,10 +40,10 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <input [disabled]="!createAlbum.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right" value="{{ title }}">
+                <input [disabled]="!createAlbum.form.valid" type="submit" class="btn btn-lg btn-block btn-success pull-right create-btn" value="{{ title }}">
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a class="btn btn-lg btn-block btn-warning" [routerLink]="['/dashboard/albums/'+artistId]">Cancel</a>
+                <a class="btn btn-lg btn-block btn-warning cancel-btn" [routerLink]="['/dashboard/albums/'+artistId]">Cancel</a>
             </div>
         </div>
     </form>
