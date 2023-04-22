@@ -1,11 +1,4 @@
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Contact Us Page UI Design | Html CSS</title>
- 
-  
-</head>
 <body>
   
   <section>
@@ -27,47 +20,65 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> 
       <div class="contactForm">
-        <form onSubmit= reset(); >
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <h2>Contact Customer Support</h2>
           <div class="formBox">
             <div class="inputBox w50">
-              <input type="text" name="" required>
+              <input type="text" name="firstName" formControlName="firstName" required>
               <span>First Name</span>
+              <div *ngIf="contactForm.get('firstName').invalid && (contactForm.get('firstName').dirty || contactForm.get('firstName').touched)">
+          <div class="alert alert-danger">First Name is required</div>
+            </div>
             </div>
             <div class="inputBox w50">
-              <input type="text" name="" required>
+              <input type="text" name="lastName" formControlName="lastName" required>
               <span>Last Name</span>
+           
+          <div *ngIf="contactForm.get('firstName').invalid && (contactForm.get('firstName').dirty || contactForm.get('firstName').touched)">
+          <div class="alert alert-danger">Last Name is required</div>
             </div>
+            </div>
+
             <div class="inputBox w50">
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" name="email" formControlName="email" required>
               <span>Email Address</span>
+              <div *ngIf="contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)" class="alert alert-danger">
+                <div *ngIf="contactForm.get('email').errors.required">Email is required.</div>
+                <div *ngIf="contactForm.get('email').errors.email">Invalid email address.</div>
+              </div>
             </div>
-            <div class="inputBox w50">
-              <input type="text" name="" required>
+            
+            <!-- <div class="inputBox w50">
+              <input type="number" name="mobile" formControlName="mobile" required>
               <span>Mobile Number</span>
+              <div *ngIf="contactForm.get('mobile').invalid && (contactForm.get('mobile').dirty || contactForm.get('mobile').touched)" class="alert alert-danger">
+                Mobile number is required.
+              </div>
+            </div> -->
+
+            <div class="inputBox w50">
+              <input type="tel" name="mobile" formControlName="mobile" required pattern="[0-9()+-]+">
+              <span>Mobile Number</span>
+              <div *ngIf="contactForm.get('mobile').invalid && (contactForm.get('mobile').dirty || contactForm.get('mobile').touched)" class="alert alert-danger">
+                Mobile number is required.
+              </div>
             </div>
-            <div class="inputBox w100">
-              <textarea name="" required></textarea>
+            
+
+            <div class="inputBox w100" [class.error]="contactForm.controls['message'].invalid && (contactForm.controls['message'].dirty || contactForm.controls['message'].touched)">
+              <textarea name="message" formControlName="message" required></textarea>
               <span>Write your message here...</span>
+              <div class="alert-message" *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].dirty || contactForm.controls['message'].touched)">
+                <div *ngIf="contactForm.controls['message'].errors.required" class="error">Message is required.</div>
+              </div>
             </div>
+            
             <div class="inputBox w100">
               <input type="submit" value="Send">
             </div>
           </div>
         </form>
       </div>
-    </div>
-  </section>
-</body>
-
-
-
-
-
-
-
-
-
-
+      
